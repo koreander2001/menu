@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">メニュー</string>
+
+    <string name="item_fragment_title">アイテム</string>
+    <string name="equipment_fragment_title">装備</string>
+    <string name="status_fragment_title">ステータス</string>
+    <string name="skill_fragment_title">スキル</string>
+    <string name="quest_fragment_title">クエスト</string>
+    <string name="community_fragment_title">コミュニティ</string>
+    <string name="save_fragment_title">セーブ</string>
+</resources>
