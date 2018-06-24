@@ -9,9 +9,9 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 
-class MainActivity : AppCompatActivity() {
+final class MainActivity : AppCompatActivity() {
 
-    private val TAG: String = this.javaClass.simpleName
+    // private val TAG: String = this.javaClass.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

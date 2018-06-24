@@ -8,4 +8,13 @@
     <string name="quest_fragment_title">クエスト</string>
     <string name="community_fragment_title">コミュニティ</string>
     <string name="save_fragment_title">セーブ</string>
+
+    <string-array name="item_name_list">
+        <item>天気予報ビューアー</item>
+    </string-array>
+
+    <string name="ongoing_quest_fragment_title">進行中</string>
+    <string name="achieved_quest_fragment_title">達成済み</string>
+    <string name="failed_quest_fragment_title">達成失敗</string>
+
 </resources>
