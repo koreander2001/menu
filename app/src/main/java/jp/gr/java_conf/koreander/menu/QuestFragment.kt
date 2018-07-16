@@ -3,14 +3,14 @@ package jp.gr.java_conf.koreander.menu
 import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class QuestFragment : Fragment() {
+class QuestFragment : TabFragment() {
 
     // private val TAG: String = this.javaClass.simpleName
 
@@ -31,6 +31,18 @@ class QuestFragment : Fragment() {
         tabLayout.setupWithViewPager(viewPager)
     }
 
+    override fun onBackPressed() : Boolean {
+        val viewPager: ViewPager = view!!.findViewById(R.id.quest_view_pager)
+        val viewPagerAdapter = viewPager.adapter as ViewPagerAdapter
+        val fragment = viewPagerAdapter.findFragmentByPosition(viewPager, viewPager.currentItem)
+
+        if (fragment.onBackPressed()){
+            return true
+        } else {
+            return super.onBackPressed()
+        }
+    }
+
     private class ViewPagerAdapter(fm: FragmentManager, context: Context) : FragmentPagerAdapter(fm) {
         private val tabTitleList: List<String> = listOf(
                 context.resources.getString(R.string.ongoing_quest_fragment_title),
@@ -38,10 +50,10 @@ class QuestFragment : Fragment() {
                 context.resources.getString(R.string.failed_quest_fragment_title)
         )
 
-        private val fragmentList: List<Fragment> = listOf(
+        private val fragmentList = listOf(
                 OngoingQuestFragment(), AchievedQuestFragment(), FailedQuestFragment())
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): TabFragment {
             return fragmentList[position]
         }
 
@@ -51,6 +63,10 @@ class QuestFragment : Fragment() {
 
         override fun getPageTitle(position: Int): CharSequence? {
             return tabTitleList[position]
+        }
+
+        fun findFragmentByPosition(viewPager: ViewPager, position: Int): TabFragment {
+            return instantiateItem(viewPager, position) as TabFragment
         }
     }
 }

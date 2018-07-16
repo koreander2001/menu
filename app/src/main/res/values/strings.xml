@@ -1,6 +1,8 @@
 <resources>
+    <!-- アプリ名 -->
     <string name="app_name">メニュー</string>
 
+    <!-- トップ画面で表示されているタブ -->
     <string name="item_fragment_title">アイテム</string>
     <string name="equipment_fragment_title">装備</string>
     <string name="status_fragment_title">ステータス</string>
@@ -9,10 +11,10 @@
     <string name="community_fragment_title">コミュニティ</string>
     <string name="save_fragment_title">セーブ</string>
 
-    <string-array name="item_name_list">
-        <item>天気予報ビューアー</item>
-    </string-array>
+    <!-- アイテムタブ内のリストから移動できるフラグメント -->
+    <string name="weather_forecast_viewr_fragment_title">天気予報ビューアー</string>
 
+    <!-- クエストタブ内のタブ -->
     <string name="ongoing_quest_fragment_title">進行中</string>
     <string name="achieved_quest_fragment_title">達成済み</string>
     <string name="failed_quest_fragment_title">達成失敗</string>

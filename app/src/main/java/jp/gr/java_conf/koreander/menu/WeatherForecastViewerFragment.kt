@@ -9,9 +9,6 @@ import android.view.ViewGroup
 class WeatherForecastViewerFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-
-        val view: View = inflater.inflate(R.layout.fragment_weather_forecast_viewer, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_weather_forecast_viewer, container, false)
     }
 }
