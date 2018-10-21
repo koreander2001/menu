@@ -17,18 +17,6 @@ class ItemListFragment : ListFragment() {
         )
         listAdapter = ArrayAdapter(context!!, android.R.layout.simple_expandable_list_item_1,
                 itemTitleList)
-
-/*
-        itemListView.onItemClickListener =
-                AdapterView.OnItemClickListener { _, _, position, _ ->
-                    // タップされた項目に対応したフラグメントに画面遷移させる
-                    val fragmentTransaction: FragmentTransaction =
-                            childFragmentManager.beginTransaction()
-                    fragmentTransaction.replace(R.id.main_view_pager, fragmentList[position])
-                    fragmentTransaction.addToBackStack(null)
-                    fragmentTransaction.commit()
-                }
-                */
     }
 
     override fun onListItemClick(l: ListView?, v: View?, position: Int, id: Long) {

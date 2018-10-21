@@ -19,4 +19,13 @@
     <string name="achieved_quest_fragment_title">達成済み</string>
     <string name="failed_quest_fragment_title">達成失敗</string>
 
+    <!-- 時間系変数用の文字列フォーマット -->
+    <string name="date_format">yyyy/MM/dd</string>
+    <string name="time_format">HH:mm:ss</string>
+    <string name="datetime_format">yyyy/MM/dd HH:mm:ss</string>
+    <string name="only_month_and_date_format">MM月dd日</string>
+
+    <!-- バックエンドURL -->
+    <string name="weather_forecast_api_url">http://loungemate.jp/weather.json</string>
+
 </resources>
