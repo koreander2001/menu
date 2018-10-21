@@ -35,6 +35,8 @@ class WeatherForecastViewerFragment : Fragment() {
                     val results = json.getJSONObject("daily").getJSONArray("data")
 
                     val dateFormat = SimpleDateFormat(getString(R.string.only_month_and_date_format))
+                    val probabilityFormat = "%2d%%"
+                    val temperatureFormat = "%d°"
                     for (i in 0 until results.length()){
                         // 日ごとの日付、降水確率、最高気温、最低気温を取得
                         val data = results.getJSONObject(i)
@@ -46,9 +48,12 @@ class WeatherForecastViewerFragment : Fragment() {
                         layoutInflater.inflate(R.layout.table_row_weather, tableLayout)
                         val tableRow = tableLayout.getChildAt(i) as TableRow
                         (tableRow.getChildAt(0) as TextView).text = dateFormat.format(datetime)
-                        (tableRow.getChildAt(1) as TextView).text = "%d%%".format(precipProbability)
-                        (tableRow.getChildAt(2) as TextView).text = "%d度".format(temperatureHigh)
-                        (tableRow.getChildAt(3) as TextView).text = "%d度".format(temperatureLow)
+                        (tableRow.getChildAt(1) as TextView).text = probabilityFormat
+                                .format(precipProbability)
+                        (tableRow.getChildAt(2) as TextView).text = temperatureFormat
+                                .format(temperatureHigh)
+                        (tableRow.getChildAt(3) as TextView).text = temperatureFormat
+                                .format(temperatureLow)
                     }
                 }
                 is Result.Failure -> {
