@@ -10,8 +10,6 @@ import android.support.v4.view.ViewPager
 
 class MainActivity : AppCompatActivity() {
 
-    // private val TAG: String = this.javaClass.simpleName
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,12 +30,12 @@ class MainActivity : AppCompatActivity() {
         val viewPagerAdapter = viewPager.adapter as ViewPagerAdapter
         val fragment = viewPagerAdapter.findFragmentByPosition(viewPager, viewPager.currentItem)
 
-        if (!fragment.onBackPressed()){
+        if (!fragment.onBackPressed()) {
             super.onBackPressed()
         }
     }
 
-    private class ViewPagerAdapter(fm: FragmentManager, resources: Resources):
+    private class ViewPagerAdapter(fm: FragmentManager, resources: Resources) :
             FragmentPagerAdapter(fm) {
         private val tabTitleList: List<String> = listOf(
                 resources.getString(R.string.item_fragment_title),
